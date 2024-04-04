@@ -1,0 +1,185 @@
+<footer class="container-fluid footer-bottom py-5_1">
+    <div class="row align-items-center h-100 mw_1152">
+        <div class="col logo">
+            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/logo.png" alt="" class="img-fluid ">
+        </div>
+        <div class="col text-right">
+            <a href="http://pf.kakao.com/_xlygdxj"><img src="https://ggari.s3.ap-northeast-2.amazonaws.com/kk.png" alt=""
+                    class="img-fluid mr-2"></a>
+            <a href="https://www.facebook.com/profile.php?id=100083209522654"><img src="https://ggari.s3.ap-northeast-2.amazonaws.com/fb.png" alt=""
+                    class="img-fluid mr-2"></a>
+            <a href="https://www.instagram.com/ggari_official/"><img src="https://ggari.s3.ap-northeast-2.amazonaws.com/in.png" alt="" class="img-fluid"></a>
+        </div>
+    </div>
+
+    <div class="row mw_1152 mt-4">
+        <div class="col fs_12 letter0 line_22 fw_400">
+            충청남도 천안시 동남구 병천면 충절로 1600<br>
+            사업자등록번호: 272-48-00761  통신판매업신고: 제 2022-충남천안-2200호<br>
+            대표: 오유정   개인정보책임자: 오유정<br>
+            Email: iloveoyj0209@naver.com
+        </div>
+    </div>
+
+    <div class="row mw_1152 mt-5_2 last_row">
+        <div class="col fs_12 fw_700">
+            Copyright©2022 까리박스 All rights reserved.
+        </div>
+        <div class="col text-right fs_12 fw_400">
+            <a href="/page/?M2_IDX=26801">이용약관</a> l 
+            <a href="/page/?M2_IDX=26801">개인정보처리방침</a> l 
+            <a href="/page/?M2_IDX=26802">고객센터</a>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    $(() => {
+        let url = location.href;        
+
+        //PC일떄
+        if($('body').width() > 576){
+
+            //각종보드 상단간격
+            if (url.includes('page') ||
+                url.includes('cons') ||
+                url.includes('board') ||
+                url.includes('coupon') ||
+                url.includes('my/pay') ||
+                url.includes('shop') 
+            )
+            {
+                $('.content_wrap1').css('padding-top', '100px');
+            }
+
+            let $navs = $('#menu').children()
+            //gnb칠하기
+            if(/63299|26950|26059|26060|26061/i.test(url)){
+                $navs.eq(0).addClass('active');
+            }
+            if(url.includes('26434')){
+                $navs.eq(1).addClass('active');
+            };
+            if(url.includes('27038')){
+                $navs.eq(2).addClass('active');
+            }
+            if(url.includes('cart')){
+                $navs.eq(3).addClass('active');
+            }
+            if(/26802|26801|26803|26800/i.test(url)){
+                $navs.eq(4).addClass('active');
+            }
+
+            //각종 마이페이지 좌우좁힘
+            if(/coupon|point|sett|regular|memb|pw|cons|pay|coun.list|order.temp|order.add/i.test(url)){
+                $('.content_wrap1').css({width : '1152px', margin : "0 auto", minHeight : 'calc(194px + 100vh)' });
+            }
+
+            //마이페이지 사이드바 대책
+            if(/memb|sett|coun.list|order|pay|coupon|regular|point/i.test(url) )
+            {
+                $('.content_wrap1').css({paddingLeft : 300, paddingTop : 375});
+            }
+
+            //마이페이지 목록 색칠
+            if(url.includes('26922')){
+                $('.mypage_menu > a').eq(0).find('div').css({color : '#6E9357'})                
+            }
+            if(url.includes('pay.list')){
+                $('.mypage_menu > a').eq(1).find('div').css({color : '#6E9357'})                
+            }
+            if(url.includes('sett')){
+                $('.mypage_menu > a').eq(2).find('div').css({color : '#6E9357'})                
+            }
+            if(url.includes('28102')){
+                $('.mypage_menu > a').eq(3).find('div').css({color : '#6E9357'})                
+            }
+            if(url.includes('26065')){
+                $('.mypage_menu > a').eq(4).find('div').css({color : '#6E9357'})                
+            }
+            if(url.includes('memb.info')){
+                $('.mypage_menu > a').eq(5).find('div').css({color : '#6E9357'})                
+                //높이맞추기
+                $('.content_wrap1').css({paddingTop : 338});
+            }
+
+        //모바일일 떄
+        }else{
+            if (/coupon|sett|regular|point|pay/i.test(url)){
+                $('.content_wrap1').css({paddingTop : 80, paddingLeft : 14, paddingRight : 14});                
+            }
+        }
+
+        if(url.includes('my/')){
+            let td = $('.my-tab-wrap td');
+            if(td != undefined){
+                td.remove();
+            }  
+        }
+
+        //쇼핑몰 마개조
+        if(url.includes('shop/list')){
+            let $firstCate = $('.category-d2').children().eq(0);
+            let $a = $('<a>').attr({href : '/shop/list.php?M2_IDX=27038'}).append($('<strong>').html('전체'));
+            let $li = $('<li>').append($a);
+            $firstCate.before($li);
+            $('.category-d2>li').css({width : 128});
+        }
+
+        //장바구니 마개조
+        if(url.includes('cart')){
+            $('footer').append('<link rel="stylesheet" type="text/css" href="https://ggaribox.s3.ap-northeast-2.amazonaws.com/override-cart.css">');
+/*            
+            let $groups = $('.option-group');
+            $groups.hide();
+            $groups.last().show();
+            $lastOptions = $groups.last().find('option');
+            
+            $lastOptions.each((i, option)=>{
+                option.click(()=>{
+                val = $(this).val();
+                $selects = $('select');
+                $selects.each((i, select)=>{
+                    select.val(val);
+                });
+            });
+*/
+            
+        }
+
+        //주문 마개조
+        if(url.includes('order')){
+            $('.my-tab-wrap').remove();
+            $('.popup_wrap2').find('img').css({minWidth :13})
+        }
+
+        //마이페이지들 버튼색 변경
+        if(url.includes('my')){
+            $('footer').append('<link rel="stylesheet" type="text/css" href="https://ggaribox.s3.ap-northeast-2.amazonaws.com/override-my.css">');
+        }
+
+        //설문조사~식단표까지 강제모바일화
+        if(/26434|26046|26057/i.test(url)) {
+//            forcedWidth360();    
+        }
+
+    });
+    
+
+const forcedWidth360 = ()=>{
+    let htmlWidth = $('html').width();
+    if(htmlWidth < 1200 ){
+        $('body').height($('.bg_img').height());
+
+        //스케일 계산
+        let scale= htmlWidth / 360;
+
+        $('header').css({width : 360});
+        $('.nav_c.roll').css({position : 'absolute'});
+        $('nav').css({position : 'absolute', left : 100});
+        $('.hamburger-button').css({position : 'absolute'});
+
+        $('body').css({width : 360, transform : 'scale('+scale+')'}).css('transform-origin', 'left top');
+    }        
+}
+</script>

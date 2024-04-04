@@ -1,0 +1,1279 @@
+<style>
+    .bang_ico {
+        max-width: 24px;
+    }
+
+    .banner_bg {
+        background-repeat: no-repeat;
+        background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_top_bg.png);
+        background-size: cover;
+        height: 300px;
+    }
+
+    .float_l_10 {
+        float: left;
+        padding-right: 10px;
+    }
+
+
+
+    .cat_wrap {
+        position: relative;
+    }
+
+    .img_wrap_txt {
+        position: absolute;
+        top: 46%;
+        left: 36%;
+        transform: translate(-50%, -50%);
+    }
+
+    .sub_tag {
+        max-width: 148px;
+    }
+
+    .cat_wrap .fw_700 {
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .cart_box img {
+        max-width: 90px;
+    }
+
+    .list_img {
+        width : 90px;
+        height : 90px;
+    }
+
+    .btn_plus_img img,
+    .btn_minus_img img {
+        max-width: 20px;
+        position: relative;
+        top: -1.5px;
+    }
+
+
+    .cart_wrap {
+        background: #FFFFFF;
+        border-radius: 0;
+        padding: 0 50px;
+        border-bottom: 2px solid #EDEDED;
+    }
+
+    .cart_box {
+        padding: 30px 0;
+        width : 100%;
+    }
+
+    .cart_wrap:nth-child(1) {
+        border-radius: 10px 10px 0 0;
+    }
+
+    .cart_wrap:nth-last-child(1) {
+        border-bottom: 0;
+        border-radius: 0 0 10px 10px;
+    }
+
+
+
+    .price {
+        line-height: 85px;
+    }
+
+    .price2 {
+        line-height: 85px;
+    }
+
+    .cart_round_box img {
+        /*border: 1px solid #DBDADA;*/
+        border-radius: 10px;
+    }
+
+    .cart_quantity {
+        background: #F7F7F7;
+        border-radius: 6px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        max-width: 70px;
+        width: 70px;
+        text-align: center;
+        float: left;
+    }
+
+    .small_btn2 {
+        padding: 5.5px 8px;
+        border-radius: 6px;
+        float: left;
+    }
+
+    .cart_wrap3 {
+        background: #FFFFFF;
+        padding: 35px 80px;
+        border-radius: 10px;
+    }
+
+    .cart_wrap4 {
+        background: #FFFFFF;
+        padding: 32px 65px;
+        border-radius: 10px;
+        border: 2px solid #6E9357;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .subscription_button img {
+        max-width: 560px;
+        box-shadow: 5px 5px 32px rgba(0, 0, 0, 0.12);
+        border-radius: 140px;
+    }
+
+    .subscribe_btn {
+        text-decoration-line: underline;
+    }
+
+
+    .dd_snack div {
+        padding: 35px 94px 35px 110px;
+    }
+
+    .dt_snack {
+        padding : 10px 80px;
+        color: #fff;
+        height: 104px;
+        /* display: flex;*/
+        line-height: 80px;
+        align-items: center;
+        background-repeat: no-repeat;
+        background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/acc_arrow_down_fff.png);
+        background-size: 30px;
+        background-position-y: 50%;
+        background-position-x: calc(100% - 94px);
+        border-bottom: 2px solid #F7F7F7;
+        cursor: pointer;
+    }
+
+    .dt_snack.on {
+        background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/acc_arrow_up_fff.png);
+    }
+
+    .dl_snack {
+        background: #6E9357;
+        border-radius: 10px;
+    }
+
+    .dd_snack {
+        background-color: #EDF2EA;
+        display: none;
+    }
+
+    .pr_2rem {
+        padding-right: 25px;
+    }
+
+    #calender_area{
+        font-size : 16px;
+        color : #787878;
+        width : 100%;
+    }
+
+    #calender{
+        width : 770px;
+    }
+
+    .red_color {
+        color : #F08080 !important;
+    }
+    
+    .day_box{
+        width : 100px;
+        height : 100px;
+        margin : 5px;
+        padding : 10px;
+        float : left;
+        text-align : center;
+        border-radius: 6px;
+    }
+
+    .day_box.active{
+        background-color: #EDF2EA;
+    }
+
+    .day_box.title{
+        height : 30px;
+    }
+    
+    .day_box.speical{
+        font-weight: 700;
+    }
+
+    .day_text{
+        margin : 0px auto 20px;
+        width : 40px;
+        height : 40px;
+        border-radius : 20px;
+        background-color: white;            
+        line-height: 40px;    
+    }
+
+    .ball{
+        width : 8px;
+        height : 8px;
+        border-radius : 4px;
+        margin : 2px;
+        float: left;
+    }
+
+    #special_box{
+        width : 110px;
+        height : 540px;
+        float: left;
+        color : #6E9357;
+    }
+
+    #snack_content_box{
+        width : 270px;
+        margin-left : 7px;
+        float: left;
+    }
+
+    #snack_content_title{
+        width : 100%;
+        height : 50px;
+        border-radius: 50px;
+        background-color: #EDF2EA;
+        color: #6E9357;
+        text-align: center;
+        line-height: 50px;
+        margin-bottom: 10px;
+    }
+
+    #snack_contents{
+        background-color : #F9FCF7;
+        border-radius : 10px;
+        padding: 30px;
+        color : #BEBCBB;
+    }
+
+    #snack_title{
+        color: #6E9357;
+        font-weight: 700;
+    }
+
+    #snack_pos{
+
+    }
+    #snack_list{
+
+    }
+
+    .dot_contents{
+        margin : 15px;
+        height: 24px;
+        clear : both;
+    }
+
+    .dot_marker{
+        width : 8px;
+        height : 20px;
+        border-radius : 4px;
+        margin-right : 10px;
+        float : left;
+    }
+
+    .dot_description{
+        
+    }
+
+    .cate1{
+        background-color : #dd7172;
+    }
+    .cate2{
+        background-color : #966CDF;
+    }
+    .cate3{
+        background-color : #FFA559;
+    }
+    .cate4{
+        background-color : #FFD455;
+    }
+    .cate5{
+        background-color : #8BCA64;
+    }
+    .cate6{
+        background-color : #D76ADF;
+    }
+    .cate7{
+        background-color : #769DE1;
+    }
+    .cate8{
+        background-color : #689088;
+    }
+    .cate9{
+        background-color : #6B6B82;
+    }
+
+
+    @media screen and (max-width: 567px ) {
+
+        #section1 .mw_1152{
+            max-width : 100%;
+            padding: 0 32px;
+        }
+        #section1 .pt_36px {
+            padding-top: 20px;
+            text-align: left;
+            display: flex;
+            vertical-align: middle;
+        }
+
+        #section2.mt_34px {
+            margin-top: 20px;
+        }
+
+        #section2 .mw_1152{
+            max-width : 100%;
+            padding : 0px;
+        }
+        #calender {
+            width : 100%;
+            padding : 0 12px;
+        }
+        #special_box {
+            padding : 0 12px;
+        }
+
+        #section3.mt_90px {
+            margin-top: -14px;
+        }
+
+        #section4.pt_110px {
+            padding-top: 50px;
+            margin-top: 5px;
+        }
+
+        #section4 .mt_30px {
+            margin-top: 20px !important;
+        }
+
+        #section5,
+        #section6,
+        #section7,
+        #section8,
+        #section9,
+        #section10,
+        #section11 {
+            background-color: white;
+        }
+
+        
+        .bang_ico {
+            max-width: 24px;
+            max-height: 24px;
+            top: 6px;
+            margin-right: 6px;
+        }
+
+        .cat_head {
+            width: 36px;
+            height: 38px;
+            margin-right: 10px;
+            margin-top: 9px;
+            margin-left: 12px;
+        }
+
+        .cat_head.pr_40px {
+            padding-right: 0px;
+        }
+
+        .cart_round_box img {
+            display : none;
+        }
+
+        .py_25px {
+            padding: 14px 16px;
+            display: flex;
+        }
+
+        .banner_bg {
+            background-repeat: no-repeat;
+            background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_top_bg_m.png);
+            background-size: cover;
+            height: 180px;
+        }
+
+        .sub_tag,
+        .top_cat {
+            display: none;
+        }
+
+        #section3 .fs_36 {
+            font-size: 20px;
+            display: grid;
+        }
+
+        .img_wrap_txt {
+            position: absolute;
+            top: 24px;
+            left: 2%;
+            transform: none;
+        }
+
+        .btn {
+            font-size: 12px;
+        }
+
+        .btn_plus_img img,
+        .btn_minus_img img {
+            max-width: 18px;
+        }
+
+        .btn_plus_img span,
+    
+
+
+        .col-12 {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        .col {
+            padding-right: 0;
+            padding-left: 0;
+        }
+        #cart_boxes > article:not(last-of-type){
+            border-bottom : #EDEDED 2px solid; 
+        }
+
+        .mw_1152 {
+            max-width: 288px;
+            margin: 0 auto;
+        }
+
+        .pt_150px {
+            padding-top: 140px;
+        }
+
+        #snack_content_box{
+            width : 100%;
+            margin-bottom : 30px;
+            margin-left : 0px;
+        }
+        #snack_content_title{
+            display : none;
+        }
+        .cart_wrap {
+            padding: 0 25px;
+        }
+
+        .check_custom input[type=checkbox]+label {
+            background-size: 18px;
+            background-position-y: 0;
+        }
+
+
+        .cart_box .d-inline-block {
+            float: left;
+        }
+
+        .cart_box .pr_15px {
+            padding-right: 0;
+        }
+
+        .small_btn {
+            padding: 4px 14px;
+        }
+
+        .cart_box .mt_12px {
+            margin-top: 10px;
+        }
+
+        .cart_box {
+            padding: 20px 0;
+        }
+
+        .price {
+            line-height: 1.5;
+            padding: 60px 0px;
+            margin-right : 14px;
+        }
+
+        .price2 {
+            line-height: 1.5;
+            position : absolute;
+            height : 100%;
+            right : -26px;
+        }
+
+        .itemmm_name {
+            display: block;
+            padding-left: 0;
+            width : 188px;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;            
+        }
+
+        .cart_quantity {
+            padding-top: 6px;
+            padding-bottom: 6px;
+            max-width: 48px;
+            width: 48px;
+            margin-left: 0;
+        }
+
+        .small_btn2 {
+            padding: 3px 5px;
+        }
+
+        .ml_10px {
+            margin-left: 0;
+        }
+
+        .cart_wrap2 {
+            padding: 30px 25px;
+        }
+
+        .pr_50px {
+            padding-right: 20px;
+        }
+
+        .custom2 input[type=checkbox]+label {
+            padding-left: 26px;
+        }
+
+        #section6.pt_20px,
+        #section7.pt_20px,
+        #section8.pt_20px,
+        #section9.pt_20px {
+            padding-top: 10px;
+        }
+
+        .cart_wrap3,
+        .cart_wrap4 {
+            padding: 27px 25px;
+        }
+
+        .cart_order_btn img {
+            max-width: 288px;
+        }
+
+        .pt_80px {
+            padding-top: 50px;
+        }
+
+        .subscribe_btn.pt_40px {
+            padding-top: 20px;
+        }
+
+        .subscription_button img {
+            max-width: 288px;
+        }
+
+        #section8 .fs_22 {
+            font-size: 14px;
+        }
+
+        .dt_snack {
+            height: 76px;
+            line-height: 19px;
+            background-size: 20px;
+            background-position-y: 50%;
+            background-position-x: calc(100% - 26px);
+            padding: 17px 0 0 26px;
+        }
+        .dd_snack div {
+            padding: 27px 20px 27px 25px;
+        }
+        .m_f2 {
+            font-weight: 400;
+        }
+
+        .pr_140px {
+            padding-right: 53px;
+            top: -8px;
+        }
+
+        .day_box{
+            width : calc(100%/7);
+            height : 46px;
+            border-radius: 6px;
+            margin-left : -1px;
+            margin-right : -1px;
+            padding : 6px;
+        }
+
+
+        #calender_area{
+            max-width : 100%;
+        }
+
+        .day_text{
+            width : 26px;
+            height : 26px;
+            font-size : 14px;
+            border-radius : 13px;
+            line-height : 26px;
+            margin-bottom : 0px;
+        }
+
+        .ball{
+            margin : 1px;
+            width : 4px;
+            height : 4px;
+        }
+
+        .balls{
+           display: flex;
+            justify-content: center;          
+        }
+
+        .day_box.title.special{
+            width : calc(100%/7*2);
+        }
+
+        #special_box{
+            width : 100%;
+            height : 80px;
+        }
+
+        .border_rd{
+            border-radius: 10px;
+        }
+
+        .bg_sub_gray_etc{
+            background : none;
+        }
+
+    }
+</style>
+
+
+<div class="container-fluid pt_150px" id="section1">
+    <div class="row mw_1152">
+        <div class="col-12">
+            <div class="fs_28">
+                <span id="year_month"></span><br>
+                <span class="fw_700">
+                    <span id="cat_name" class="point_color"></span>님 맞춤 권장 간식단표
+                </span>
+            </div>
+            <div class="pt_36px">
+                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/bang_ico.png" alt=""
+                    class="bang_ico img-fluid">
+                <span>본 간식단표는 ‘권장’ 간식단표로 제품추가/삭제를 하여도 반영되지 않습니다.</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--calendar-->
+<div class="container-fluid mt_34px calendar" id="section2">
+    <div id="calender_area" class="row mw_1152">
+        <div id="calender">
+            <div class="day_box title red_color">일</div>
+            <div class="day_box title">월</div>
+            <div class="day_box title">화</div>
+            <div class="day_box title">수</div>
+            <div class="day_box title">목</div>
+            <div class="day_box title">금</div>
+            <div class="day_box title">토</div>    
+        </div>
+        <div id="special_box">
+            <div class="day_box title special">SPECIAL</div>
+            <div class="day_box special" id="special1" onclick="calender.drawSnacklist(this, false)">
+                <div class="day_text">1주</div>
+                <div class="balls"></div>
+            </div>
+            <div class="day_box special" id="special2" onclick="calender.drawSnacklist(this, false)">
+                <div class="day_text">2주</div>
+                <div class="balls"></div>
+            </div>
+            <div class="day_box special" id="special3" onclick="calender.drawSnacklist(this, false)">
+                <div class="day_text">3주</div>
+                <div class="balls"></div>
+            </div>
+            <div class="day_box special" id="special4" onclick="calender.drawSnacklist(this, false)">
+                <div class="day_text">4주</div>
+                <div class="balls"></div>
+            </div>
+            <div class="day_box special" id="special5" onclick="calender.drawSnacklist(this, false)">
+                <div class="day_text">5주</div>
+                <div class="balls"></div>
+            </div>
+        </div>
+        <div id="snack_content_box">
+            <div id="snack_content_title">간식 리스트</div>
+            <div id="snack_contents">
+                캘린더에서 <br>날짜를 선택해주세요.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid mt_90px banner_bg" id="section3">
+    <div class="row mw_1152 ">
+        <div class="col">
+            <div class="cat_wrap">
+                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_top_cat.png" alt=""
+                    class="img-fluid top_cat">
+                <div class="img_wrap_txt">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sub_tag.png" alt=""
+                        class="img-fluid sub_tag">
+                    <div class="fs_36 color_fff">까리박스
+                        <span class="fw_700">첫 구독배송 쿠폰 증정</span>
+                    </div>
+                    <div class="fs_16 color_fff pc_br_none pt_10px">저렴한 가격으로<br> 맞춤형 간식을 구독하세요!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid bg_sub_gray_etc pt_110px" id="section4">
+    <div class="row mw_1152">
+        <div class="col">
+            <div class="fs_28 fw_700">
+                구독 제품 리스트
+            </div>
+        </div>
+        <div class="col-12 pt_40px px-0">
+            <button type="button" class="btn btn-outline-success fw_700 btn_plus_img mr-3" onclick="calender.goToCycle()">
+                주기 재설정하기
+            </button>
+            <button type="button" class="btn btn-outline-success fw_700 btn_plus_img btn_plus_txt" onclick="calender.goToDiagnosis()">
+                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_plus_ico.png" alt="" class="img-fluid mr-2">
+                <span>제품 추가하기</span>
+            </button>
+            <button type="button" id="deleteItemBtn" class="btn btn-outline-success fw_700 float-right btn_minus_img btn_minus_txt" onclick="calender.deleteItem()">
+                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_minus_ico.png" alt="" class="img-fluid mr-2">
+                <span>제품 삭제하기</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="row mw_1152 point_color_alpha mt_30px border_rd">
+        <div class="col py_25px pl_50px">
+            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_head.png" alt=""
+                class="img-fluid pr_40px cat_head">
+            <span class="fw_700">
+                해당 리스트는 <span class="point_color">매달 정기배송될 제품들</span>입니다.
+                <span class="point_color">당월 1회만 구입하고 싶은 제품은 장바구니(다음 페이지)</span>에서 추가하세요.
+            </span>
+        </div>
+    </div>
+</div>
+
+<!--장바구니 목록-->
+<div class="container-fluid pt_30px bg_sub_gray_etc" id="section5">
+    <div class="row mw_1152 cart_wrap">
+        <div id="cart_boxes" class="col">
+        </div>
+    </div>
+
+</div>
+
+
+<!--배송비,합계  총 결제 금액--->
+<div class="container-fluid pt_20px bg_sub_gray_etc" id="section6">
+    <div class="row mw_1152 cart_wrap3">
+        <div class="col pr-0">
+            <div class="fs_20 fw_700 float-left">배송비</div>
+            <div class="fs_20 fw_700 float-right point_color">￦2,500</div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid pt_20px bg_sub_gray_etc" id="section7">
+    <div class="row mw_1152 cart_wrap3">
+        <div class="col pr-0">
+            <div class="fs_20 fw_700 float-left">합계</div>
+            <div id="total_price" class="fs_20 fw_700 float-right point_color"></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid pt_20px bg_sub_gray_etc" id="section8">
+    <div class="row mw_1152 ">
+        <div class="col px-0">
+            <dl class="dl_snack">
+                <dt class="dt_snack fs_22 fw_700 pc_br_none">
+                    정기 구독 서비스 <br><span class="m_f2">이용 시</span>
+                    <div id="total_discount" class="float-right pr_50px fs_20 fw_700 text-right"></div>
+                </dt>
+                <dd class="dd_snack fs_20 fw_700 point_color">
+                    <div>
+                        배송비 무료 <span class="float-right">- ￦2,500</span>
+                    </div>
+                    <div id="first_discount">
+                        첫 설문조사 참여 쿠폰 <span class="float-right">- ￦2,500</span>
+                    </div>
+                    <div>
+                        구독서비스 할인 <span class="float-right">- ￦2,500</span>
+                    </div>
+
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="container-fluid pt_20px bg_sub_gray_etc" id="section9">
+    <div class="row mw_1152 cart_wrap4">
+        <div class="col">
+            <div class="fs_22 fw_700 float-left point_color">총 결제 금액</div>
+            <div id="final_price" class="fs_20 fw_700 float-right point_color"></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="text-center pt_80px subscription_button bg_sub_gray_etc" id="section10">
+    <a onclick="calender.postSubscribe()">
+        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/subscription_button.png" class="img-fluid" alt="">
+    </a>
+</div>
+
+
+<!--비구독자에게만 보임-->
+<div class="text-center pt_40px fs_18  sub_gray_text subscribe_btn pb_80px bg_sub_gray_etc" id="section11">
+    <a onclick="calender.postOllyShop()">구독 없이 장바구니에 담기</a>
+</div>
+
+
+<script>
+
+    $(()=>{
+        calender.init();
+    });
+
+    var calender = {
+        id : null,
+        items : null,
+        date : new Date(),
+        cat : null,
+        products : null,
+        itemlist : null,
+        ollyshop : null,
+        ggaribox : {},
+        totalDiscount : 0,
+        totalPrice : 0,
+        finalPrice : 0,
+        isSpecialDrawn : [],
+        isFirst : false,
+
+        init : () => {
+            calender.id = util.getParamFromUrl('id');
+            if(calender.id == undefined){
+                alert('잘못된 접근입니다.');
+                location.href = "/"
+            }
+            calender.items = JSON.parse(util.getParamFromUrl('items'));
+            let spread3_1 = false;
+            let spread3_2 = false;
+            let spread2_1 = false;
+            $.each(calender.items, (index, item)=>{
+                switch(item){
+                    case '10' :
+                        if(!spread3_1 && !spread3_2){
+                            spread3_1 = true;
+                        }else if(spread3_1 && !spread3_2){
+                            spread3_2 = true;
+                            calender.items[index] = '11';
+                        }else if(spread3_1 && spread3_2){
+                            spread3_1 = false, spread3_2 = false;
+                            calender.items[index] = '12';
+                        }
+                    break;
+                    case '15' : 
+                        if(!spread2_1){
+                            spread2_1 = true;
+                        }else{
+                            spread2_1 = false;
+                            calender.items[index] = '16';
+                        }
+                    break;
+                }
+            });
+
+            $('#year_month').html(calender.date.getFullYear() + "년 " + (calender.date.getMonth()+1) + "월");
+            calender.getDatas();
+        },
+
+        getDatas : ()=>{
+            let pr1 = $.ajax(util.getAjaxSetting(serverUrl+"/api/cat/idcat/"+calender.id)
+                ).done((data)=>{
+                    calender.cat = data;
+                    $('#cat_name').html(calender.cat.name);
+                }).fail((err)=>{
+                    console.log("NO CAT HERE! ", err);
+                });
+            let pr2 = $.ajax({
+                url: '/api/shop.list.php',
+                type: "POST",
+                data: {
+                    "KEY": apikey,
+                    menu2_id: "26044",
+                    use_page : false,
+                    use_limit : false
+                },
+            }).done((data) => {
+                console.log(data);
+                calender.ollyshop = data.items;
+            }).fail((jqXHR, textStatus, errorThrown) => {
+                console.log(errorThrown)
+            });
+
+            let ids = JSON.stringify(Object.keys(calender.items));
+            var pr3 = $.ajax(util.getAjaxSetting(serverUrl+"/api/product/ids/", {id_str : ids})).done((data) => {
+                console.log(data);
+                if (util.isEmpty(data)) {
+                    alert('잘못된 접근입니다.');
+                    location.href = '/';
+                    return false;
+                }
+                calender.itemlist = data;
+            }).fail((jqXHR, textStatus, errorThrown) => {
+                console.log('PRODUCT ERROR!!' + textStatus + " : " + errorThrown);
+                alert('상품정보 열람에 실패했습니다!');
+            });
+
+            var pr4 = $.ajax(util.getAjaxSetting(serverUrl+"/api/surveys/first/"+calender.id))
+                .done((data)=>{
+                    console.log(data);
+                    calender.isFirst = data;
+                }).fail((jqXHR, textStatus, errorThrown) => {
+                    console.log(errorThrown)
+                });
+
+            $.when(pr1, pr2, pr3).done(()=>{
+                $.each(calender.itemlist, (i, item)=>{
+                    //선가공
+                    if (item.id_olly_product != null) {
+                        Object.assign(item, calender.ollyshop.find(e => e.product_code == item.id_olly_product));
+                    } else { }
+                });
+                calender.drawCalender();
+                calender.drawGgaribox();
+                calender.drawFirstDiscount();
+            });
+        },
+
+        postSubscribe : ()=>{
+            let start;
+            let startStr;
+            let y = calender.date.getFullYear();
+            let m = calender.date.getMonth();
+            if(10 < calender.date.getDate() && calender.date.getDate() < 25){
+                start = new Date(y, m+1, 1);
+            }else{
+                start = new Date(y, m, 15);
+            }
+            startStr = start.toISOString().substr(0, 19).replace('T', ' ');
+            console.log(startStr);
+            var pr1 = $.ajax({
+                url : serverUrl+"/api/subscribe/",
+                data : { id_cat : calender.id,
+                    startday : startStr,
+                    items : JSON.stringify(calender.ggaribox),
+                    price : calender.finalPrice,
+                },
+                type : 'POST',
+            }).done((data)=>{
+                console.log(data);
+            }).fail((jqXHR, textStatus, errorThrown) => {
+                console.log(jqXHR, textStatus, errorThrown)
+            });
+
+            $.when(pr1).done(()=>{
+                alert('구독해주셔서 감사합니다.');
+                location.href="/my/cart.list.php?SPO_KIND=C";
+            })
+        },
+
+        postOllyShop : () => {
+            var pr;
+
+            return pr;
+        },
+
+
+        goToCycle : () =>{            
+            location.href = document.referrer;
+        },
+
+        goToDiagnosis : () =>{
+            location.href = "/page/?M2_IDX=26046&id="+util.getParamFromUrl('id');
+        },
+
+        deleteItem : () =>{    
+            let $deletes = $('input[type=checkbox]:checked');
+            if($deletes.length == 0 ){
+                alert('삭제할 상품을 골라주세요.');
+                return false;
+            }           
+            $.each($deletes, (i, item)=>{                           
+                let id = $(item).attr('id').replace(/[^0-9]/g, "");
+                $('#cart'+id).remove();
+                delete calender.ggaribox[id];
+                
+                console.log(calender.ggaribox);
+            });            
+        },
+
+        drawPrices : (price) =>{
+            calender.totalPrice += price;
+            let dis = calender.isFirst ? 7500 : 5000;
+            calender.finalPrice = calender.totalPrice - dis;
+            $('#total_price').html(util.won3Comma(calender.totalPrice));
+            $('#total_discount').html("- "+util.won3Comma(dis));
+            $('#final_price').html(util.won3Comma(calender.finalPrice));
+        },
+
+        drawCalender : ()=>{             
+            let boxCount = 1;
+            let firstDayOfWeek = new Date(calender.date.getFullYear(), calender.date.getMonth(), 1).getDay();
+            let lastday = new Date(calender.date.getFullYear(), calender.date.getMonth()+1, 0).getDate();
+            let $calender = $('#calender');
+            outer : for(let i = 0; i < 7; i++){
+                inner : for(let j = 0; j < 6; j++){                    
+                    if(boxCount > firstDayOfWeek+lastday){
+                        break outer;
+                    }
+                    let $box = $('<div>').attr('id', 'box'+boxCount).addClass('day_box');
+                    if(firstDayOfWeek < boxCount){
+                        let $day = $('<div>').addClass('day_text').html(boxCount-firstDayOfWeek);
+                        $box.append($day);
+                        $balls = $('<div>').addClass('balls');               
+                        for(key in calender.items){
+                            let isEat = false;
+                            switch (parseInt(calender.items[key])){
+                                case 30 : case 60 : case 90 : isEat = true; break;
+                                case 16 : isEat = (boxCount+1) % 2 == 0; break;
+                                case 15 : isEat = boxCount % 2 == 0; break;
+                                case 12 : isEat = (boxCount+2) % 3 == 0; break;
+                                case 11 : isEat = (boxCount+1) % 3 == 0; break;
+                                case 10 : isEat = boxCount % 3 == 0; break;
+                                default :
+                                    if(!calender.isSpecialDrawn.includes(key))
+                                        calender.drawSpecialList(key, parseInt(calender.items[key]));
+                                    break;
+                            }
+                            if(isEat){
+                                let product = calender.itemlist.find(e=> e.id == key);
+                                let $ball = $('<div>').addClass('ball cate'+product.category);
+                                $balls.append($ball);
+                            }
+                        };
+                        $box.append($balls);
+                        $box.on("click", ()=>{calender.drawSnacklist($box, true)});
+                    }
+                    $calender.append($box);
+                    boxCount++;
+                }
+            }
+
+        },
+
+        drawSpecialList : (id, iterate)=>{
+            let isFeedWeeks = [];
+            switch (iterate){
+                case 2 : isFeedWeeks = [1,3,5];  break;
+                case 1 : isFeedWeeks = [3];  break;
+                case 4 : isFeedWeeks = [1,2,3,4,5,6];  break;
+            }
+            let product = calender.itemlist.find(e=> e.id == id);
+
+            for(let i=1; i <6; i++){
+                if(isFeedWeeks.includes(i)){
+                    let $ball = $('<div>').addClass('ball cate'+product.category);
+                    $('#special'+i).find('.balls').append($ball);
+                }
+            }
+            calender.isSpecialDrawn.push(id);
+        },
+
+        drawSnacklist : (self, isDay) =>{
+            let $self = isDay ? self : $(self);
+            $('.day_box').removeClass('active');
+            $self.addClass('active');
+            $contents = $('#snack_contents');
+            $contents.empty();
+            let dayText = calender.date.getFullYear()+"년 "+(calender.date.getMonth()+1)+"월 ";
+            if(isDay){
+                let day = $self.find('.day_text').html();
+                dayText += day+"일";
+            }else{
+                let week = $self.attr('id').replace(/[^0-9]/g, '');
+                dayText += week+"주";
+            }
+            let title = isDay ? '일일 간식 | ' : '스페셜 간식 | ';
+            let $title = $('<span>').attr('id', 'snack_title').html(title);
+            let $pos =  $('<span>').attr('id', 'snack_pos').html(dayText);
+            $contents.append($title, $pos);
+            $.each($self.find('.ball'), (i, item)=>{
+                let idCate = $(item).attr('class').replace(/[^0-9]/g ,"")
+                let $dotMarker = $('<div>').addClass('dot_marker cate'+idCate);
+                let $dotDescription = $('<div>').addClass('dot_description').html(util.getCategoryStr(parseInt(idCate)));
+                let $dots = $('<div>').addClass('dot_contents').append($dotMarker, $dotDescription);
+                $contents.append($dots);                
+            });            
+
+        },
+
+        drawGgaribox : () =>{
+            let $carts = $('#cart_boxes');
+            let $originbox = $('#origin_inbox');
+            $.each(calender.itemlist, (i, item)=>{
+                let $box = $originbox.clone().removeClass('d-none').attr('id', 'cart'+item.id);
+                $box.find('.list_img').attr('src', item.img);                
+                $box.find('.category').html(item.category2_name);
+                $box.find('.itemmm_name').html( item.product_name);
+                $box.find('input').attr({name:'delete'+item.id, id:'delete'+item.id});
+                $box.find('label').attr({for:'delete'+item.id});
+                $box.find('.price').html(util.won3Comma(item.product_price));                
+                let amount = calender.items[item.id];
+                let ggari = {
+                    id : item.id,
+                    amount : amount,
+                    amount_user_added :0,
+                }
+                calender.ggaribox["item"+item.id] = ggari;
+                calender.totalPrice += parseInt(item.product_price) * amount;
+                $box.find('.cart_quantity').attr('id', 'amount'+item.id).html(amount);
+                $box.find('.btn_plus_img').click(()=>{calender.count(item.id, true)});
+                $box.find('.btn_minus_img').click(()=>{calender.count(item.id, false)});
+                $carts.append($box);
+            });
+            calender.drawPrices(0);
+        },
+
+        drawFirstDiscount : () => {
+            if(!calender.isFirst){
+                $('#first_discount').hide();
+            }
+        },
+
+        count : (id, isPlus)=>{
+            const $quantity = $('#amount'+id);
+            let quantity = parseInt($quantity.html());
+            let price = calender.itemlist.find(e=> e.id == id).product_price;            
+            if(isPlus){
+                quantity++;
+                calender.ggaribox["item"+id].amount_user_added++;
+                calender.drawPrices(price);
+            }else{
+                if(quantity != 0){
+                    quantity--;                    
+                    calender.totalPrice -= price;
+                    calender.ggaribox["item"+id].amount_user_added--;
+                    calender.drawPrices(-price);
+                }
+            }
+            console.log(calender.ggaribox);
+            $quantity.html(quantity);
+        },
+
+
+    }
+
+    $(window).resize(function () {
+        if (window.innerWidth > 1200) {  // 다바이스 크기가 480이상일때 
+            $(document).ready(function () {
+                changeIMG();
+            });
+            function changeIMG() {
+                $(".btn_minus_txt img").attr("src", "https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_minus_ico.png");
+                $(".btn_minus_txt span").text("제품 삭제하기");
+                $(".btn_plus_txt span").text("제품 추가하기");
+                $(".btn_plus_txt img").addClass("mr-2");
+                $(".btn_minus_txt img").addClass("mr-2");
+                $(".btn_plus_txt").css("padding", "14px 22px");
+                $(".btn_minus_txt").css("padding", "14px 22px");
+                $(".list_img").removeClass("d-none");
+                $(".subscription_button img").attr("src", "https://ggaribox.s3.ap-northeast-2.amazonaws.com/subscription_button.png");
+                $(".cal_ico02").css("max-width", "100%");
+                $(".cal_ico05").css("max-width", "100%");
+                $(".cal_ico06").css("max-width", "100%");
+            }
+        } else {
+            $(document).ready(function () {
+                changeIMG();
+            });
+            function changeIMG() {
+                $(".btn_minus_txt img").attr("src", "https://ggaribox.s3.ap-northeast-2.amazonaws.com/trash_ico.png");
+                $(".btn_minus_txt span").text("");
+                $(".btn_plus_txt span").text("");
+                $(".btn_minus_txt img").removeClass("mr-2");
+                $(".btn_plus_txt img").removeClass("mr-2");
+                $(".btn_plus_txt").css("padding", "10px 11px");
+                $(".btn_minus_txt").css({padding : "10px 11px", marginTop : 3});
+                $(".list_img").addClass("d-none");
+                $(".subscription_button img").attr("src", "https://ggaribox.s3.ap-northeast-2.amazonaws.com/subscription_button_m.png");
+                $(".cal_ico02").css("max-width", "11px");
+                $(".cal_ico05").css("max-width", "15px");
+                $(".cal_ico06").css("max-width", "18px");
+                $('#total_discount').css({lineHeight : 0, paddingRight : 50});
+            }
+        }
+    }).resize();
+
+    var acodian = {
+        click: function (target) {
+            var _self = this,
+                $target = $(target);
+            $target.on('click', function () {
+                var $this = $(this);
+                if ($this.next($(".dd_snack")).css('display') == 'none') {
+                    $(".dd_snack").slideUp();
+                    _self.onremove($target);
+                    $this.addClass('on');
+                    $this.next().slideDown();
+                } else {
+                    $(".dd_snack").slideUp();
+                    _self.onremove($target);
+                }
+            });
+        },
+        onremove: function ($target) {
+            $target.removeClass('on');
+        }
+    };
+    acodian.click($(".dt_snack"));
+
+</script>
+
+<article id="origin_inbox" class="row mt_20px d-none">
+    <div class="cart_box">
+        <div class="d-inline-block align-middle pr_15px">
+            <div class="check_custom">
+                <input type="checkbox" name="select_chk01" id="select_chk01">
+                <label for="select_chk01">&nbsp;</label>
+            </div>
+        </div>
+        <div class="d-inline-block align-middle pr_30px cart_round_box">
+            <img src="" alt="" class="img-fluid list_img">
+        </div>
+
+        <div class="d-inline-block align-middle">
+            <div class="fs_18 fw_700 mb_12px">
+                <span class="category"></span>
+                <span class="fw_400 sub_gray_text pl_20px itemmm_name"></span>
+            </div>
+            <button type="button" class="btn btn-outline-success small_btn2 ml_10px btn_minus_img" value="-">
+                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_minus_ico.png" alt="" class="img-fluid">
+            </button>
+            <div class="cart_quantity ml_10px"></div>
+            <button type="button" class="btn btn-outline-success small_btn2 btn_plus_img" value="+">
+                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_plus_ico.png" alt="" class="img-fluid">
+            </button>
+        </div>
+        <div class="d-inline-block align-middle float-right price2 pr_2rem text-right">
+            <div class="fs_20 fw_700 point_color price"></div>
+        </div>
+    </div>
+</div>
+
